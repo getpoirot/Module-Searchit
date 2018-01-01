@@ -1,0 +1,1200 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Searchit",
+		"_postman_id": "5e58f0c3-3a4f-b789-e664-46eeb088e25d",
+		"description": "search service (fulltext, geospatial, ...)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Searchable Items",
+			"description": "",
+			"item": [
+				{
+					"name": "Store searchable Items",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{ \n\t   \"target\": \"user\",\n\t   \"target_id\": \"3\",\n\t   \"entity\": {\n\t   \t \"id\" : 3,\n\t   \t \"name\":\"majid\",\n\t   \t \"username\" :\"mhndev\",\n\t   \t \"family\":\"abdolhosseini\"\n\t   }\n\t},\n\t{\n\t   \"target\": \"user\",\n\t   \"target_id\": \"4\",\n\t   \"entity\": {\n\t   \t \"id\" : 4,\n\t   \t \"name\":\"reza\",\n\t   \t \"username\" :\"mohammadid\",\n\t   \t \"family\":\"mohammadi\"\n\t   }\n\t\t\n\t}\n]"
+						},
+						"url": "{{server_url}}/item/bulk",
+						"description": "store multiple searchable item"
+					},
+					"response": [
+						{
+							"id": "eced9c69-e3b1-49d6-ba47-47b284b2b5d4",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n   \"target\": \"target entity (user)\",\n   \"target_id\": \"user_uid (10)\",\n   \"serchable\": \"search terms content here.\",\n   \"entity\": {\n   \t \"id\" : 10,\n   \t \"name\":\"majid\",\n   \t \"family\":\"abdolhosseini\"\n   }\n}\n"
+								},
+								"url": "localhost:8888/store"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Oct 2017 14:54:59 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 25,
+							"body": "{ \n   \"target\": \"target entity (user)\",\n   \"target_id\": \"user_uid (10)\",\n   \"serchable\": \"search terms content here.\",\n   \"entity\": {\n   \t \"id\" : 10,\n   \t \"name\":\"majid\",\n   \t \"family\":\"abdolhosseini\"\n   }\n}\n"
+						},
+						{
+							"id": "bd145e72-a8f5-48c5-923d-654aaba3eaf3",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n\t{ \n\t   \"target\": \"target entity (user)\",\n\t   \"target_id\": \"user_uid (10)\",\n\t   \"serchable\": [\"name\", \"username\"],\n\t   \"entity\": {\n\t   \t \"id\" : 10,\n\t   \t \"name\":\"majid\",\n\t   \t \"username\": \"mhndev\",\n\t   \t \"family\":\"abdolhosseini\"\n\t   }\n\t},\n\t{\n\t   \"target\": \"target entity (post)\",\n\t   \"target_id\": \"user_uid (15)\",\n\t   \"serchable\": [\"title\",\"body\",\"tags\"],\n\t   \"entity\": {\n\t   \t \"id\" : 15,\n\t   \t \"title\":\"mashape/kong\",\n\t   \t \"body\":\"post body goes here ...\",\n\t   \t \"tags\" : [\n\t   \t\t\"t1\",\"t2\",\"t3\", \"t10\"\n\t   \t ]\n\t   }\n\t\t\n\t}\n]"
+								},
+								"url": "localhost:8888/store"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Oct 2017 14:54:59 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 25,
+							"body": "[\n\t{ \n\t   \"target\": \"target entity (user)\",\n\t   \"target_id\": \"user_uid (10)\",\n\t   \"serchable\": [\"name\", \"username\"],\n\t   \"entity\": {\n\t   \t \"id\" : 10,\n\t   \t \"name\":\"majid\",\n\t   \t \"username\": \"mhndev\",\n\t   \t \"family\":\"abdolhosseini\"\n\t   }\n\t},\n\t{\n\t   \"target\": \"target entity (post)\",\n\t   \"target_id\": \"user_uid (15)\",\n\t   \"serchable\": [\"title\",\"body\",\"tags\"],\n\t   \"entity\": {\n\t   \t \"id\" : 15,\n\t   \t \"title\":\"mashape/kong\",\n\t   \t \"body\":\"post body goes here ...\",\n\t   \t \"tags\" : [\n\t   \t\t\"t1\",\"t2\",\"t3\", \"t10\"\n\t   \t ]\n\t   }\n\t\t\n\t}\n]"
+						}
+					]
+				},
+				{
+					"name": "Update searchable Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{ \n\t   \"target\": \"target entity (user)\",\n\t   \"target_id\": \"user_uid (10)\",\n\t   \"entity\": {\n\t   \t \"id\" : 10,\n\t   \t \"name\":\"majid\",\n\t   \t \"username\": \"mhndev\",\n\t   \t \"family\":\"abdolhosseini\"\n\t   }\n\t},\n\t{\n\t   \"target\": \"target entity (post)\",\n\t   \"target_id\": \"user_uid (15)\",\n\t   \"entity\": {\n\t   \t \"id\" : 15,\n\t   \t \"title\":\"mashape/kong\",\n\t   \t \"body\":\"post body goes here ...\",\n\t   \t \"tags\" : [\n\t   \t\t\"t1\",\"t2\",\"t3\", \"t10\"\n\t   \t ]\n\t   }\n\t\t\n\t}\n]"
+						},
+						"url": "{{server_url}}/update",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Increase Searchable Item score",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"searchale_type\": \"user\",\n\t\t\"searchable_id\": 12,\n\t\t\"keyword\"      : \"maj\"\n\t},\n\t{\n\t\t\"searchale_type\": \"user\",\n\t\t\"searchable_id\": 12,\n\t\t\"keyword\"      : \"aha\"\n\t},\n\t{\n\t\t\"searchale_type\": \"post\",\n\t\t\"searchable_id\": \"123rfgre35\",\n\t\t\"keyword\"      : \"sam\"\n\t}\n]"
+						},
+						"url": "{{server_url}}/score",
+						"description": "Increase score of searchable Item with given search keyword"
+					},
+					"response": [
+						{
+							"id": "d77c4a95-255e-4abb-bacb-f0b5ebd722c7",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n\t{\n\t\t\"searchale_type\": \"user\",\n\t\t\"searchable_id\": 12,\n\t\t\"keyword\"      : \"maj\"\n\t},\n\t{\n\t\t\"searchale_type\": \"user\",\n\t\t\"searchable_id\": 12,\n\t\t\"keyword\"      : \"aha\"\n\t},\n\t{\n\t\t\"searchale_type\": \"post\",\n\t\t\"searchable_id\": \"123rfgre35\",\n\t\t\"keyword\"      : \"sam\"\n\t}\n]"
+								},
+								"url": "localhost:8888/score"
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 01 Nov 2017 09:03:58 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 30,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Store Single Searchable Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n   \"target\": \"user\",\n   \"target_id\": 1,\n   \"entity\": {\n   \t \"id\" : 1,\n   \t \"name\":\"zelzele\",\n   \t \"bio\" :\"in zelzelast\"\n   },\n   \"tags\":[\n   \t\t\"marjan\", \"majarestan\"\n   \t]\n}"
+						},
+						"url": "{{server_url}}/item",
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "9ad4cccf-bdae-423a-9e01-b253536132ad",
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n   \"target\": \"user\",\n   \"target_id\": \"2\",\n   \"entity\": {\n   \t \"id\" : 2,\n   \t \"name\":\"majid\",\n   \t \"username\" :\"mhndev\",\n   \t \"family\":\"abdolhosseini\"\n   }\n}"
+								},
+								"url": "localhost:8090/item"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "OPTIONS, GET, POST ,PUT, DELETE, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 11 Nov 2017 05:54:30 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100",
+									"name": "Keep-Alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Debian)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.11",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 366,
+							"body": "{\"identifier\":\"2\",\"type\":\"user\",\"entity\":{\"id\":2,\"name\":\"majid\",\"username\":\"mhndev\",\"family\":\"abdolhosseini\"},\"_links\":{\"self\":{\"href\":\"\\/item\"}}}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Searchable Types",
+			"description": "",
+			"item": [
+				{
+					"name": "create a searchable type item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"post\",\n\t\"searchable_fields\" : {\"title\" : \"text\", \"body\": \"text\"},\n\t\"autocomplete\" : true\n}\n"
+						},
+						"url": "{{server_url}}/type",
+						"description": "create searchable types like post,user.\n\nOptions:\n- autocompelete: if true we can send tags while insert new item."
+					},
+					"response": [
+						{
+							"id": "d7059dd8-87d3-4966-a9c0-b78e0ad03207",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "localhost:8888/search?target=user,post&q=ma&page=4",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "target",
+											"value": "user,post",
+											"equals": true
+										},
+										{
+											"key": "q",
+											"value": "ma",
+											"equals": true
+										},
+										{
+											"key": "page",
+											"value": "4",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Oct 2017 16:32:39 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 6,
+							"body": "{\n\t\"status\":\"OK\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List searchable types",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": "{{server_url}}/type",
+						"description": "list of searchable types"
+					},
+					"response": [
+						{
+							"id": "e336b413-bd47-445c-87d4-9a7260b7a3c3",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": "localhost:8888/searchable"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Oct 2017 16:44:29 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 28,
+							"body": "{\n    \"count\": 10,\n    \"items\": [\n    \t{\"name\":\"user\", \"searchable\" : [\"name\", \"username\", \"bio\"]},\n    \t{\"name\":\"post\", \"searchable\" : [\"title\", \"body\", \"tags\"]}\n\t]\n}"
+						}
+					]
+				},
+				{
+					"name": "create batch searchable types",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t\t\"name\" : \"user\",\n\t\t\"autocomplete\" : true,\n\t\t\"searchable\" : {\"name\" : \"text\", \"username\": \"text\", \"bio\":\"text\"}\n\t},\n\t{\n\t\t\"name\" : \"user\",\n\t\t\"autocomplete\": true,\n\t\t\"searchable\" : {\"name\" : \"text\", \"username\": \"text\", \"bio\":\"text\"}\n\t}\n]"
+						},
+						"url": "{{server_url}}/type/batch",
+						"description": "create searchable types like post,user"
+					},
+					"response": []
+				},
+				{
+					"name": "Show single Searchable type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": "{{server_url}}/type/{{searchable_item}}",
+						"description": "list of searchable types"
+					},
+					"response": [
+						{
+							"id": "6c12038a-f8f6-488e-a6f4-195831f97409",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": "{{server_url}}/type/{{searchable_item}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "OPTIONS, GET, POST ,PUT, DELETE, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Content-Length",
+									"value": "187",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Nov 2017 12:04:51 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Debian)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 J5K-Mobinnet (jaguar/3.0-11)",
+									"name": "Via",
+									"description": "Informs the client of proxies through which the response was sent."
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.11",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [],
+							"responseTime": 275,
+							"body": "{\"identifier\":\"search_post\",\"name\":\"post\",\"autocomplete\":true,\"searchable_fields\":[{\"name\":\"body\",\"type\":\"text\"},{\"name\":\"title\",\"type\":\"text\"}],\"_links\":{\"self\":{\"href\":\"\\/type\\/post\"}}}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"description": "",
+			"item": [
+				{
+					"name": "General Search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_url}}/item/search?types=user,post&q=maj",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"item",
+								"search"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "user,post",
+									"equals": true
+								},
+								{
+									"key": "q",
+									"value": "maj",
+									"equals": true
+								}
+							]
+						},
+						"description": "search through specified searchable types (e.x. user, post)"
+					},
+					"response": [
+						{
+							"id": "b52534d4-1c0d-4fed-a4eb-dc7df9701ca9",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "localhost:8888/search?target=user,post&q=majid",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "target",
+											"value": "user,post",
+											"equals": true
+										},
+										{
+											"key": "q",
+											"value": "majid",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Oct 2017 16:18:21 +0330",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Host",
+									"value": "localhost:8888",
+									"name": "Host",
+									"description": "Custom header"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.10-1+ubuntu16.04.1+deb.sury.org+1",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json",
+									"name": "content-type",
+									"description": "The mime type of this content"
+								}
+							],
+							"cookie": [],
+							"responseTime": 41,
+							"body": "{\n    \"count\": 10,\n    \"total\": 52,\n    \"_links\": {\n        \"self\": {\n            \"href\": \"/search?target=user,post&q=ma&page=3\"\n        },\n        \"first\": {\n            \"href\": \"/search?target=user,post&q=ma&page=1\"\n        },\n        \"prev\": {\n            \"href\": \"/search?target=user,post&q=ma&page=2\"\n        },\n        \"next\": {\n            \"href\": \"/search?target=user,post&q=ma&page=4\"\n        },\n        \"last\": {\n            \"href\": \"/search?target=user,post&q=ma&page=6\"\n        }\n    },\n    \"_embedded\": [\n    \t{\n    \t\t\"target\" : \"user\",\n    \t\t\"entity\" : {\n    \t\t\t\"name\" : \"majid\",\n    \t\t\t\"family\" : \"abdolhosseini\",\n    \t\t\t\"age\": 26\n    \t\t}\n    \t},\n    \t{\n    \t\t\"target\" : \"user\",\n    \t\t\"entity\" : {\n    \t\t\t\"name\" : \"marjan\",\n    \t\t\t\"family\" : \"mohammadi\",\n    \t\t\t\"age\": 29\n    \t\t}\n    \t},\n    \t{\n    \t\t\"target\" : \"post\",\n    \t\t\"entity\": {\n    \t\t\t\"title\" : \"mashape kong\",\n    \t\t\t\"body\" :\"post body goes here\",\n    \t\t\t\"created_at\" : \"2012/12/05 11:23:56\"\n    \t\t}\n    \t}\n\t]\n}"
+						},
+						{
+							"id": "2e710632-9f6a-46ed-b2d2-1e8af146b42f",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{server_url}}/item/search?types=user,post&q=maj",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"item",
+										"search"
+									],
+									"query": [
+										{
+											"key": "types",
+											"value": "user,post",
+											"equals": true
+										},
+										{
+											"key": "q",
+											"value": "maj",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "OPTIONS, GET, POST ,PUT, DELETE, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1133",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Nov 2017 08:11:50 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100",
+									"name": "Keep-Alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Debian)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.11",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 06:44:07 GMT+0330 (+0330)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "5156bf6bc6d3a7e1315baf295bef631e",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 42,
+							"body": "{\"data\":{\"search\":\"user,post\",\"keyword\":\"maj\"},\"_embedded\":{\"user\":{\"data\":[],\"_links\":{\"first\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=-1\"},\"prev\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=-1\"},\"self\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=1\"},\"next\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=-1\"},\"last\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=1\"}},\"count\":0,\"total\":0},\"post\":{\"data\":[{\"identifier\":null,\"type\":null,\"entity\":null,\"tags\":null,\"id\":1,\"title\":\"zelzele majarestan\",\"body\":\"az majarahaye zelzele ...\",\"name_suggest\":{\"input\":[\"marjan\",\"majarestan\"],\"contexts\":{\"suggest_type\":[\"post\"]}}}],\"_links\":{\"first\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=1\"},\"prev\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=-1\"},\"self\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=1\"},\"next\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=-1\"},\"last\":{\"href\":\"\\/item\\/searchtypes=user%2Cpost&q=maj&page=1\"}},\"count\":1,\"total\":1}}}<br />\n<b>Warning</b>:  Division by zero in <b>/var/www/vendor/mhndev/hal/src/Paginated.php</b> on line <b>488</b><br />\n"
+						},
+						{
+							"id": "b8e51d66-866e-47f0-9a32-94c109068849",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{server_url}}/item/search?types=user,post&q=maj",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"item",
+										"search"
+									],
+									"query": [
+										{
+											"key": "types",
+											"value": "user,post",
+											"equals": true
+										},
+										{
+											"key": "q",
+											"value": "maj",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "OPTIONS, GET, POST ,PUT, DELETE, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1073",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Nov 2017 08:48:10 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100",
+									"name": "Keep-Alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Debian)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.11",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 06:44:07 GMT+0330 (+0330)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "5156bf6bc6d3a7e1315baf295bef631e",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 45,
+							"body": "{\"data\":{\"search\":\"user,post\",\"keyword\":\"maj\"},\"_embedded\":{\"user\":{\"data\":[{\"identifier\":\"2\",\"type\":\"user\",\"entity\":{\"id\":2,\"name\":\"majiddddd\",\"bio\":\"in zelzelast\"},\"tags\":[\"marjan\",\"majarestan\"]}],\"_links\":{\"first\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"},\"prev\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=-1\"},\"self\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"},\"next\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=-1\"},\"last\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"}},\"count\":1,\"total\":1},\"post\":{\"data\":[{\"identifier\":\"1\",\"type\":\"post\",\"entity\":{\"id\":1,\"title\":\"zelzele majarestan\",\"body\":\"az majarahaye zelzele ...\"},\"tags\":[\"marjan\",\"majarestan\"]}],\"_links\":{\"first\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"},\"prev\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=-1\"},\"self\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"},\"next\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=-1\"},\"last\":{\"href\":\"\\/item\\/search?types=user%2Cpost&q=maj&page=1\"}},\"count\":1,\"total\":1}}}"
+						}
+					]
+				},
+				{
+					"name": "Autocomplete (Suggest)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_url}}/item/suggest/autocomplete?q=maj&types=post",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"item",
+								"suggest",
+								"autocomplete"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "maj",
+									"equals": true
+								},
+								{
+									"key": "types",
+									"value": "post",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "afa21a7e-d35c-48b4-87a6-40ce36d3c6ea",
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:8090/item/suggest/autocomplete?q=maj&types=user,post",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"item",
+										"suggest",
+										"autocomplete"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "maj",
+											"equals": true
+										},
+										{
+											"key": "types",
+											"value": "user,post",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "OPTIONS, GET, POST ,PUT, DELETE, PATCH",
+									"name": "Access-Control-Allow-Methods",
+									"description": "Specifies the method or methods allowed when accessing the resource. This is used in response to a preflight request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Nov 2017 06:13:05 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100",
+									"name": "Keep-Alive",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.10 (Debian)",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.1.11",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 06:44:07 GMT+0330 (+0330)",
+									"httpOnly": true,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "5156bf6bc6d3a7e1315baf295bef631e",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 95,
+							"body": "{\"data\":[{\"type\":\"user\",\"entity\":{\"id\":3,\"name\":\"majid\",\"username\":\"mhndev\",\"bio\":\"backend developer (php)\"},\"match\":\"majid\"},{\"type\":\"user\",\"entity\":{\"id\":2,\"name\":\"majid\",\"username\":\"mhndev\",\"bio\":\"backend developer (php)\"},\"match\":\"majid\"}]}"
+						}
+					]
+				},
+				{
+					"name": "Search Specific type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{server_url}}/item/search/user?q=maj",
+							"host": [
+								"{{server_url}}"
+							],
+							"path": [
+								"item",
+								"search",
+								"user"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "maj",
+									"equals": true
+								}
+							]
+						},
+						"description": "search through specified searchable types (e.x. user, post)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delete Index",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic ZWxhc3RpYzpjaGFuZ2VtZQ=="
+					}
+				],
+				"body": {},
+				"url": "localhost:9200/search",
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

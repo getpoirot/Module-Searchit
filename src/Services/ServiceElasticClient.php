@@ -1,23 +1,27 @@
 <?php
 namespace Module\Searchit\Services;
 
+use Elasticsearch\Client;
+use Elasticsearch\ClientBuilder;
 use Poirot\Ioc\Container\Service\aServiceContainer;
 
 
 class ServiceElasticClient
     extends aServiceContainer
 {
-    protected $hosts;
+    protected $hosts = 'elastic:changeme@search_server_storage:9200';
 
 
     /**
      * Create Service
      *
-     * @return mixed
+     * @return Client
      */
     function newService()
     {
-
+        return ClientBuilder::create()
+            ->setHosts($this->hosts)
+            ->build();
     }
 
 
