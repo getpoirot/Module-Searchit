@@ -1,0 +1,21 @@
+{
+    "name": "poirot/mod-searchit",
+    "authors": [
+        {
+            "name": "Payam Naderi"
+            , "email": "naderi.payam@gmail.com"
+        }
+    ]
+    , "require": {
+        "poirot/skeleton": "dev-master"
+        , "elasticsearch/elasticsearch": "~5.3"
+    }
+    , "autoload"  : {
+        "psr-4": {
+            "Module\\Searchit\\": "src/"
+        },
+        "files": [
+            "src/_functions.php"
+        ]
+    }
+}
