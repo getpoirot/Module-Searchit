@@ -7,7 +7,7 @@
         }
     ]
     , "require": {
-        "poirot/skeleton": "dev-master"
+        "poirot/skeleton": "dev-devel"
         , "elasticsearch/elasticsearch": "~5.3"
     }
     , "autoload"  : {
